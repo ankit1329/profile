@@ -1,0 +1,34 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+<nav ngxNavbarDynamicExpand style="height: 9vh;">
+    <button mat-icon-button class="navbar-toggler" type="button" (click)="collapse.toggle()" aria-controls="main-nav"
+        aria-expanded="false" aria-label="navigation control">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <ngx-navbar-collapse id="main-nav" #collapse="ngxNavbarCollapse">
+        <mat-toolbar class="navbar-nav mr-auto" color="primary">
+            <!-- <span style="margin-left: 5px;margin-right: 20px;"> Ankit </span> -->
+            <button mat-button aria-label="Resume Link" routerLink="/">
+                Home
+            </button>
+            <button mat-button aria-label="Resume Link" routerLink="/resume">
+                Resume
+            </button>
+            <span class="example-spacer"></span>
+            <a style="text-decoration: none;color: white;" mat-icon-button href="https://www.linkedin.com/in/ankit1329" target="_blank"
+                aria-label="Example icon-button with heart icon">
+                <i class="custom-icon fab fa-linkedin-in"></i>
+            </a>
+            <a style="text-decoration: none;color: white;" mat-icon-button href="https://github.com/ankit1329" target="_blank"
+                aria-label="Example icon-button with share icon">
+                <i class="custom-icon fab fa-github"></i>
+            </a>
+
+
+        </mat-toolbar>
+    </ngx-navbar-collapse>
+</nav>

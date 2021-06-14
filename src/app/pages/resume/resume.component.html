@@ -1,0 +1,219 @@
+<div
+    style="height: 91vh;overflow-y: auto;padding-top: 1px;padding-bottom: 100px;background-image: url('https://media.istockphoto.com/photos/blue-abstract-background-or-texture-picture-id1138395421?k=6&m=1138395421&s=612x612&w=0&h=bJ1SRWujCgg3QWzkGPgaRiArNYohPl7-Wc4p_Fa_cyA=');">
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>A4</title>
+
+        <!-- Normalize or reset CSS with your favorite library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+
+        <!-- Load paper.css for happy printing -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css">
+
+        <!-- Set page size here: A5, A4 or A3 -->
+        <!-- Set also "landscape" if you need -->
+        <style>
+            @page {
+                size: A4
+            }
+        </style>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.4.1/webcomponents-bundle.min.js"></script>
+    </head>
+
+    <!-- Set "A5", "A4" or "A3" for class name -->
+    <!-- Set also "landscape" if you need -->
+    <div style="height: 20px;">
+        <button style="position: absolute;right: 20px;" title="Print Resume" mat-button printSectionId="print-section"
+            ngxPrint [printTitle]="getPageUrl()" styleSheetFile="assets/print.scss">
+            <i class="fas fa-print" style="color: rgb(187, 187, 187);"></i> <span
+                style="color: rgb(187, 187, 187);">&nbsp;
+                print</span>
+        </button>
+    </div>
+
+    <body class="A4" style="background-color:rgba(0, 0, 0, 0);">
+
+        <!-- Each sheet element should have the class "sheet" -->
+        <!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
+        <section class="sheet padding-10mm" id="print-section">
+
+            <!-- Write HTML just like a web page -->
+            <div class="flex-section">
+                <div class="v-section-1">
+                    <div class="personal-info">
+                        <div class="sub-heading"><i class="custom-header-icon fas fa-user-tie"></i>Personal Info</div>
+                        <div class="box-content">
+                            <div class="line" *ngFor="let data of personalData;">
+                                <i [class]="data.icon"></i>
+                                <span class="av-text">
+                                    <a *ngIf="data.data; else addInnerHtml" [href]="data.link"
+                                        target="_blank">{{data.data}}</a>
+                                    <ng-template #addInnerHtml>
+                                        <a [href]="data.link" target="_blank" [innerHtml]="data.innerHtml"></a>
+                                    </ng-template>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="soft-skills">
+                        <div class="sub-heading"><i class="custom-header-icon fas fa-puzzle-piece"></i>Soft Skills</div>
+                        <div class="box-content">
+                            <ul class="vertical-list">
+                                <li *ngFor="let data of softSkills;">
+                                    <i class="custom-list-icon fas fa-circle"></i><span class="av-text">{{data}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="technical-skills">
+                        <div class="sub-heading"><i class="custom-header-icon fas fa-laptop-code"></i>
+                            Technical Skills
+                        </div>
+                        <div class="box-content">
+                            <ul class="vertical-list">
+                                <li *ngFor="let skill of techSkills;" class="tech-skill-item">
+                                    <div class="list-flex">
+                                        <div class="list-column1">
+                                            <span class="av-text">{{skill.name}}</span>
+                                        </div>
+                                        <div class="list-column2">
+                                            <span *ngFor="let i of [1,2,3,4,5]">
+                                                <i *ngIf="i<=skill.rating" class="rating-circle fas fa-circle"></i>
+                                                <i *ngIf="i>skill.rating" class="rating-circle far fa-circle"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="certification">
+                        <div class="sub-heading"><i class="custom-header-icon fas fa-laptop-code"></i>
+                            Certifications
+                        </div>
+                        <div class="box-content">
+                            <ul class="vertical-list">
+                                <li>
+                                    <i class="custom-list-icon fas fa-circle"></i>
+                                    <span class="av-text">Java, MySQL, AngularJs course
+                                        from<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSpiders, Old Airport Road,
+                                        Bengaluru</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="v-section-2">
+                    <div class="name-pic-box">
+                        <div class="pic-section">
+                            <ngx-avatar name="Akhouri Ankit Prakash" githubId="ankit1329" size="65"></ngx-avatar>
+                        </div>
+                        <div class="name-section">
+                            <div class="heading">Akhouri Ankit Prakash</div>
+                            <div class="sub-heading">Software Developer</div>
+                        </div>
+                    </div>
+                    <div class="av-text">
+                        Results-oriented professional with 4+ years for experience and knowledge of Web Development,
+                        UI/UX and Microservices. Aiming to leverage my skill to contribute in a MEAN Stack / Full Stack
+                        Developer role.
+                    </div>
+                    <div class="experience">
+                        <div class="sub-heading"><i class="custom-header-icon fas fa-briefcase"></i>
+                            Experience
+                        </div>
+                        <div class="box-content">
+                            <div class="line list-flex">
+                                <div class="width-20 list-heading ">2017-06 -<br>Present</div>
+                                <div class="width-80">
+                                    <div class="list-heading">Software Developer @ Discover Dollar</div>
+                                    <ul class="vertical-list">
+                                        <li *ngFor="let data of experience;" class="list-flex">
+                                            <i class="custom-list-experience-icon width-5 fas fa-circle"></i>
+                                            <span class="av-text width-95" [innerHtml]="data"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education">
+                        <div class="sub-heading"><i class="custom-header-icon fas fa-graduation-cap"></i>
+                            Education
+                        </div>
+                        <div class="box-content">
+                            <div class="line list-flex">
+                                <div class="width-20 list-heading" [innerHtml]="education.time"></div>
+                                <div class="width-80">
+                                    <div class="list-heading" [innerHtml]="education.name"></div>
+                                    <div class="av-text" [innerHtml]="education.stream"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publications">
+                        <div class="sub-heading"><i class="custom-header-icon fas fa-graduation-cap"></i>
+                            Publications
+                        </div>
+                        <div class="box-content">
+                            <div class="line list-flex">
+                                <div class="width-20 list-heading">
+                                    Eml-Parser
+                                </div>
+                                <div class="width-80">
+                                    <div class="list-heading">
+                                        <a href='https://www.npmjs.com/package/eml-parser'
+                                            target='_blank'>https://www.npmjs.com/package/eml-parser</a>
+                                    </div>
+
+                                    <ul class="vertical-list">
+                                        <li class="list-flex">
+                                            <i class="custom-list-experience-icon width-5 fas fa-circle"></i>
+                                            <span class="av-text width-95">
+                                                Used to parse .eml files or convert to pdf, html, jpeg or png
+                                                format.<br>Can
+                                                also
+                                                extract headers and attachments from .eml files.
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="line list-flex">
+                                <div class="width-20 list-heading">
+                                    Ngx-Mat-Alert-Confirm
+                                </div>
+                                <div class="width-80">
+                                    <div class="list-heading">
+                                        <a href='https://www.npmjs.com/package/ngx-mat-alert-confirm'
+                                            target='_blank'>https://www.npmjs.com/package/ngx-mat-alert-confirm</a>
+                                    </div>
+
+                                    <ul class="vertical-list">
+                                        <li class="list-flex">
+                                            <i class="custom-list-experience-icon width-5 fas fa-circle"></i>
+                                            <span class="av-text width-95">
+                                                A highly customizable library to display alerts and confirm boxes using
+                                                angular
+                                                material components.
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <div style="height: 20px;"></div>
+
+    </body>
+
+    </html>
+</div>
