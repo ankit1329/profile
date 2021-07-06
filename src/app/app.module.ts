@@ -10,11 +10,14 @@ import { ResumeComponent } from './pages/resume/resume.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPrintModule } from 'ngx-print';
 import { AvatarModule } from 'ngx-avatar';
 import { HttpClientModule } from '@angular/common/http';
+import { PackagesComponent } from './pages/packages/packages.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     ResumeComponent,
     HomeComponent,
+    PackagesComponent,
 
   ],
   imports: [
@@ -36,7 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     NgxPrintModule,
     AvatarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,85 +1,86 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
-  personalData = [
-    {
-      icon: "custom-icon fas fa-phone",
-      link: "tel:9606514697",
-      data: "9606514697"
-    },
-    {
-      icon: "custom-icon fas fa-at",
-      link: "mailto:akhouriankitprakash@gmail.com",
-      data: "akhouriankitprakash@gmail.com"
-    },
-    {
-      icon: "custom-icon fab fa-github",
-      link: "https://github.com/ankit1329",
-      data: "https://github.com/ankit1329"
-    },
-    {
-      icon: "custom-icon fab fa-linkedin-in",
-      link: "https://www.linkedin.com/in/ankit1329",
-      data: "https://www.linkedin.com/in/ankit1329"
-    },
-    {
-      icon: "custom-icon fas fa-map-marker-alt",
-      link: "http://maps.google.com/?q=RNR Enclave Bengaluru",
-      innerHtml: "S4, RNR Enclave, Maruthi Layout,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Munnelkola, Bengaluru - 560037"
-    }
+  personalData = [{
+    icon: "custom-icon fas fa-phone",
+    link: "tel:9606514697",
+    data: "9606514697"
+  },
+  {
+    icon: "custom-icon fas fa-at",
+    link: "mailto:akhouriankitprakash@gmail.com",
+    data: "akhouriankitprakash@gmail.com"
+  },
+  {
+    icon: "custom-icon fab fa-github",
+    link: "https://github.com/ankit1329",
+    data: "https://github.com/ankit1329"
+  },
+  {
+    icon: "custom-icon fab fa-linkedin-in",
+    link: "https://www.linkedin.com/in/ankit1329",
+    data: "https://www.linkedin.com/in/ankit1329"
+  },
+  {
+    icon: "custom-icon fas fa-map-marker-alt",
+    link: "http://maps.google.com/?q=RNR Enclave Bengaluru",
+    innerHtml: "S4, RNR Enclave, Maruthi Layout,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Munnelkola, Bengaluru - 560037"
+  }
   ]
   softSkills = [
     "Strong Communication", "Problem Solving", "Creative Thinking"
   ]
-  techSkills = [
-    {
-      name: "Node.js",
-      rating: 5,
-    },
-    {
-      name: "Angular",
-      rating: 5,
-    },
-    {
-      name: "MongoDB",
-      rating: 5
-    },
-    {
-      name: "Python",
-      rating: 4
-    },
-    {
-      name: "Java",
-      rating: 3
-    },
-    {
-      name: "ELK Stack",
-      rating: 3
-    },
-    {
-      name: "Linux",
-      rating: 5
-    },
-    {
-      name: "Windows",
-      rating: 4
-    },
-    {
-      name: "Angular Material",
-      rating: 5
-    },
-    {
-      name: "MySQL",
-      rating: 3
-    },
-    {
-      name: "Kubernetes",
-      rating: 3
-    }
+  techSkills = [{
+    name: "Node.js",
+    rating: 5,
+  },
+  {
+    name: "Angular",
+    rating: 5,
+  },
+  {
+    name: "MongoDB",
+    rating: 5
+  },
+  {
+    name: "Python",
+    rating: 4
+  },
+  {
+    name: "Java",
+    rating: 3
+  },
+  {
+    name: "ELK Stack",
+    rating: 3
+  },
+  {
+    name: "Linux",
+    rating: 5
+  },
+  {
+    name: "Windows",
+    rating: 4
+  },
+  {
+    name: "Angular Material",
+    rating: 5
+  },
+  {
+    name: "MySQL",
+    rating: 3
+  },
+  {
+    name: "Kubernetes",
+    rating: 3
+  }
   ]
 
   experience = [
@@ -111,20 +112,21 @@ export class ResumeComponent implements OnInit {
     name: "B.Tech, Silicon Institute of Technology, Bhubaneswar",
     stream: "Stream: Electronics and Communication Engineering"
   }
-  publications = [
-    {
-      name: "<a href='https://www.npmjs.com/package/eml-parser' target='_blank'>Eml-Parser</a>",
-      description: "Used to parse .eml files or convert to pdf, html, jpeg or png format.<br>Can also extract headers and attachments from .eml files."
-    },
-    {
-      name: "<a href='https://www.npmjs.com/package/ngx-mat-alert-confirm' target='_blank'>Ngx-Mat-Alert-Confirm</a>",
-      description: "A highly customizable library to display alerts and confirm boxes using angular material components."
-    }
+  publications = [{
+    name: "<a href='https://www.npmjs.com/package/eml-parser' target='_blank'>Eml-Parser</a>",
+    description: "Used to parse .eml files or convert to pdf, html, jpeg or png format.<br>Can also extract headers and attachments from .eml files."
+  },
+  {
+    name: "<a href='https://www.npmjs.com/package/ngx-mat-alert-confirm' target='_blank'>Ngx-Mat-Alert-Confirm</a>",
+    description: "A highly customizable library to display alerts and confirm boxes using angular material components."
+  }
+  ]
+  hobbies = [
+    "Playing and following football", "Multiplayer & survival games", "Casual Anime & series"
   ]
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
   getPageUrl() {
     return window.location.href;
   }
